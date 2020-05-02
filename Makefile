@@ -7,7 +7,7 @@ GOGET=$(GOCMD) get
 BINARY_NAME=tts-save
 BINARY_UNIX=$(BINARY_NAME)_unix
 
-all: t b build-linux
+
 b:
 	$(GOBUILD) -o $(BINARY_NAME) -v
 t: 
@@ -22,6 +22,8 @@ run:
 deps:
 
 lint:
+
+all: t b build-linux
 
 
 # Cross compilation
