@@ -5,9 +5,7 @@ go:
   - master
 
 script:
-  make t
   make b
-  make build-linux
 env:
   global:
     - GO111MODULE=on
