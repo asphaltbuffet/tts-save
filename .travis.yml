@@ -1,5 +1,9 @@
 language: go
 
+os:
+  - linux
+  - windows
+
 go:
   - 1.14.x
 
@@ -9,13 +13,9 @@ before_script:
 script:
   - GOARCH=$BUILD_GOARCH GOOS=$BUILD_GOOS go build -0 tts-save -v
 
-  - if [ $BUILD_GOOS == "windows" ]; then golangci-lint run; fi       # run a bunch of code checkers/linters in parallel
+  - golangci-lint run       # run a bunch of code checkers/linters in parallel
 
 env:
   global:
     - GO111MODULE=on
     - BUILD_GOARCH=amd64
-  matrix: 
-    - BUILD_GOOS=windows
-    - BUILD_GOOS=darwin
-    - BUILD_GOOS=linux
