@@ -21,6 +21,7 @@ run:
 	./$(BINARY_NAME)
 deps:
 
+lint:
 
 
 # Cross compilation
